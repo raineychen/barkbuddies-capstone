@@ -1,51 +1,56 @@
 @import '../../styles/main.scss';
 
 .welcome {
-  &__logo {
-    &--img {
-      max-width: 100%;
-      height: auto;
-      margin-left: 5rem;
-      margin-right: 1rem;
-      margin-top: 2.5rem;
-    }
-  }
-  &__hero {
-    &--img {
-      width: 24rem;
-      height: auto;
-      margin-top: 2.5rem;
-    }
-  }
   &__container {
     display: flex;
     flex-direction: column;
     margin: 2.5rem 1.5rem 2.5rem 1.5rem;
     width: 23rem;
-    &--description {
-    }
+
     &--description-color {
       color: $supporting-color-2;
     }
   }
+
+  &__hero {
+    &--img {
+      height: auto;
+      margin-top: 2.5rem;
+      width: 24rem;
+    }
+  }
+
+  &__logo {
+    &--img {
+      height: auto;
+      margin-left: 5rem;
+      margin-right: 1rem;
+      margin-top: 2.5rem;
+      max-width: 100%;
+    }
+  }
+
   &__section {
-    margin: 2rem 1.5rem 2rem 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 2rem 1.5rem 2rem 1.5rem;
+
     &--button {
       background-color: $primary-color-1;
-      width: 20.438rem;
-      height: 3rem;
-      border-radius: 0.75rem;
       border: none;
+      border-radius: 0.75rem;
+      height: 3rem;
+      width: 23rem;
     }
+
+    &--spacer {
+      padding-top: 2rem;
+    }
+
     &--text {
       color: $primary-color-3;
       text-decoration: none;
-    }
-    &--spacer {
-      padding-top: 2rem;
     }
   }
 }

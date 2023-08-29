@@ -30,7 +30,7 @@ function LoginPage() {
           </form>
         </div>
         <p>
-          <Link to="/signup" className="login__text login__text--bold">
+          <Link to="/" className="login__text login__text--bold">
             Forgot password?
           </Link>
         </p>
