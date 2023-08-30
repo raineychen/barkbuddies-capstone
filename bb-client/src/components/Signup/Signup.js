@@ -1,9 +1,9 @@
-import "./SignupPage.scss";
+import "./Signup.scss";
 import backArrow from "../../assets/Images/back_arrow.png";
 import Error from "../../assets/Images/error.png";
 import { Link } from "react-router-dom";
 
-function SignupPage() {
+function Signup() {
   return (
     <div className="signup">
       <div>
@@ -101,4 +101,4 @@ function SignupPage() {
   );
 }
 
-export default SignupPage;
+export default Signup;

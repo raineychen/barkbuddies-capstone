@@ -1,10 +1,10 @@
-import "./LoginPage.scss";
+import "./Login.scss";
 import Hero from "../../assets/Images/login_pups.png";
 import backArrow from "../../assets/Images/back_arrow.png";
 import Error from  "../../assets/Images/error.png"
 import { Link } from "react-router-dom";
 
-function LoginPage() {
+function Login() {
   return (
     <div className="login">
       <div>
@@ -49,4 +49,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default Login;

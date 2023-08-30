@@ -1,12 +1,12 @@
-import "./LoadingPage.scss";
-import Loading from "../../assets/Images/loading.png";
+import "./Loading.scss";
+import load from "../../assets/Images/loading.png";
 // import { Link } from "react-router-dom";
 
-function LoadingPage() {
+function Loading() {
   return (
     <div>
       <div className="wrapper">
-        <img src={Loading} alt="Background" className="background-image" />
+        <img src={load} alt="Background" className="background-image" />
         <span className="circle circle-1"></span>
         <span className="circle circle-2"></span>
         <span className="circle circle-3"></span>
@@ -17,4 +17,4 @@ function LoadingPage() {
   );
 }
 
-export default LoadingPage;
+export default Loading;

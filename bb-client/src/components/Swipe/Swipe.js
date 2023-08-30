@@ -1,4 +1,4 @@
-import "./SwipePage.scss";
+import "./Swipe.scss";
 import Footer from "../Footer/Footer";
 import userProfile from '../../assets/Images/profile_user.png'
 import heart from '../../assets/Images/heart.png'
@@ -7,7 +7,7 @@ import xMark from '../../assets/Images/x_mark.png'
 
 
 
-function SwipePage() {
+function Swipe() {
   return (
    <div className="swipe">
     <div className="swipe__hero">
@@ -27,4 +27,4 @@ function SwipePage() {
   );
 }
 
-export default SwipePage;
+export default Swipe;

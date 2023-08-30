@@ -1,9 +1,9 @@
 import Logo from "../../assets/Logo/logo.png";
 import Hero from "../../assets/Logo/logo_catchphrase.png";
 import { Link } from "react-router-dom";
-import "./WelcomePage.scss";
+import "./Welcome.scss";
 
-function WelcomePage() {
+function Welcome() {
   return (
     <div className="welcome">
       <div className="welcome__logo">
@@ -26,4 +26,4 @@ function WelcomePage() {
   );
 }
 
-export default WelcomePage;
+export default Welcome;
