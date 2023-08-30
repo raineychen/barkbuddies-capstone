@@ -30,12 +30,12 @@ function LoginPage() {
           </form>
         </div>
         <p>
-          <Link to="/" className="login__text login__text--bold">
+          <Link to="/recover" className="login__text login__text--bold">
             Forgot password?
           </Link>
         </p>
         <button className="login__section--button">
-          <Link to="/" className="login__section--button-text">
+          <Link to="/swipe" className="login__section--button-text">
             Login
           </Link>
         </button>

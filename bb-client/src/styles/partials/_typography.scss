@@ -3,11 +3,20 @@
 @import './_variables.scss';
 
 body {
-    font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
+}
 
-    h1{
-        font-weight: '800';
-        font-size: 1.75rem;
-        line-height: 2.25rem;
-    }
+.normal-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.semibold-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.extrabold-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
 }

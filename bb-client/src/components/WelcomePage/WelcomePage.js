@@ -19,7 +19,7 @@ function WelcomePage() {
       <div className="welcome__section">
         <button className="welcome__section--button"><Link to={'/login'} className="welcome__section--text">Login</Link></button>
         <div className="welcome__section--spacer">
-        <button className="welcome__section--button"><Link to='/' className="welcome__section--text">Signup</Link></button>
+        <button className="welcome__section--button"><Link to={'/signup'} className="welcome__section--text">Signup</Link></button>
         </div> 
      </div>
     </div>
