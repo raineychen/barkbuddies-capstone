@@ -2,8 +2,10 @@ import "./Signup.scss";
 import backArrow from "../../assets/Images/back_arrow.png";
 import Error from "../../assets/Images/error.png";
 import { Link } from "react-router-dom";
+import {useState} from "react";
 
 function Signup() {
+  const [pupVaccinated, setPupVaccinated] = useState(false);
   return (
     <div className="signup">
       <div>
@@ -31,7 +33,59 @@ function Signup() {
             </p>
 
             <div className="signup__section--spacer"></div>
+            <input
+              type="text"
+              name="signup_petname"
+              placeholder="Pet Name"
+              className="signup__input"
+              required
+            />
+            <p className="signup__error--message">
+              <img src={Error} alt="Error" className="signup__error--icon" />
+              This field is required
+            </p>
 
+            <div className="signup__section--spacer"></div>
+            <input
+              type="text"
+              name="signup_age"
+              placeholder="Pet age"
+              className="signup__input"
+              required
+            />
+            <p className="signup__error--message">
+              <img src={Error} alt="Error" className="signup__error--icon" />
+              This field is required
+            </p>
+            <div className="signup__vaccinated-options">
+              <label>
+                Is your dog vaccinated?
+                <input
+                  type="radio"
+                  name="vaccinated"
+                  value="yes"
+                  checked={pupVaccinated === true}
+                  onChange={() => setPupVaccinated(true)}
+                />
+                Yes
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="vaccinated"
+                  value="no"
+                  checked={pupVaccinated === false}
+                  onChange={() => setPupVaccinated(false)}
+                />
+                No
+              </label>
+            </div>
+            <p className="signup__error--message">
+              <img src={Error} alt="Error" className="signup__error--icon" />
+              This field is required
+            </p>
+
+            <div className="signup__section--spacer"></div>
             <input
               type="text"
               name="signup_email"
