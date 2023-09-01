@@ -5,6 +5,7 @@ import Signup from "./components/Signup/Signup";
 import Loading from './components/Loading/Loading'
 import Swipe from "./components/Swipe/Swipe";
 import Match from "./components/Match/Match";
+import Setting from "./components/Setting/Setting";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <Route path="/loading" element={<Loading />} />
         <Route path="/swipe" element={<Swipe />} />
         <Route path="/swipe/message" element={<Match />} />
+        <Route path="/settings" element={<Setting />} />
+
       </Routes>
     </BrowserRouter>
   );

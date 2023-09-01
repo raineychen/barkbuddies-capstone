@@ -41,7 +41,7 @@ function Login() {
         </button>
         <p>
           <Link to="/signup" className="login__text">
-            Not a member? Register Now
+            <p>Not a member?</p> Register Now
           </Link>
         </p>
       </div>

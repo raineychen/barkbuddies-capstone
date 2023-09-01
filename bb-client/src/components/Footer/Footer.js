@@ -16,7 +16,7 @@ export default function Footer() {
           className="footer__icons--messaging" 
         />
         </Link>
-        <Link to={'/setting'}>
+        <Link to={'/settings'}>
         <img
           src={setting}
           alt="setting icon"
