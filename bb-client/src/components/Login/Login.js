@@ -22,11 +22,11 @@ function Login() {
         <div className="login__section--spacer">
           <form>
               <input type="text" name="login_name" placeholder="Email Address" className={`login__input`}></input>
-                  {<p className="login__error--message"><img src={Error} alt="Error" className="login__error--icon"/>This field is required</p>}
+                  {/* {<p className="login__error--message"><img src={Error} alt="Error" className="login__error--icon"/>This field is required</p>} */}
             
             <div className="login__section--spacer"></div>
             <input type="password" name="login_password" placeholder="Password" className={`login__input`}></input>
-                  {<p className="login__error--message"><img src={Error} alt="Error" className="login__error--icon"/>This field is required</p>}
+                  {/* {<p className="login__error--message"><img src={Error} alt="Error" className="login__error--icon"/>This field is required</p>} */}
           </form>
         </div>
         <p>

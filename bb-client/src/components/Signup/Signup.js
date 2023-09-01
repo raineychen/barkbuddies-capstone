@@ -27,10 +27,10 @@ function Signup() {
               className="signup__input"
               required
             />
-            <p className="signup__error--message">
+            {/* <p className="signup__error--message">
               <img src={Error} alt="Error" className="signup__error--icon" />
               This field is required
-            </p>
+            </p> */}
 
             <div className="signup__section--spacer"></div>
             <input
@@ -40,10 +40,10 @@ function Signup() {
               className="signup__input"
               required
             />
-            <p className="signup__error--message">
+            {/* <p className="signup__error--message">
               <img src={Error} alt="Error" className="signup__error--icon" />
               This field is required
-            </p>
+            </p> */}
 
             <div className="signup__section--spacer"></div>
             <input
@@ -53,10 +53,10 @@ function Signup() {
               className="signup__input"
               required
             />
-            <p className="signup__error--message">
+            {/* <p className="signup__error--message">
               <img src={Error} alt="Error" className="signup__error--icon" />
               This field is required
-            </p>
+            </p> */}
             <div className="signup__vaccinated-options">
               <label>
                 Is your dog vaccinated?
@@ -80,10 +80,10 @@ function Signup() {
                 No
               </label>
             </div>
-            <p className="signup__error--message">
+            {/* <p className="signup__error--message">
               <img src={Error} alt="Error" className="signup__error--icon" />
               This field is required
-            </p>
+            </p> */}
 
             <div className="signup__section--spacer"></div>
             <input
@@ -93,10 +93,10 @@ function Signup() {
               className="signup__input"
               required
             />
-            <p className="signup__error--message">
+            {/* <p className="signup__error--message">
               <img src={Error} alt="Error" className="signup__error--icon" />
               This field is required
-            </p>
+            </p> */}
 
             <div className="signup__section--spacer"></div>
 
@@ -107,10 +107,10 @@ function Signup() {
               className="signup__input"
               required
             />
-            <p className="signup__error--message">
+            {/* <p className="signup__error--message">
               <img src={Error} alt="Error" className="signup__error--icon" />
               This field is required
-            </p>
+            </p> */}
 
             <input
               type="password"
@@ -119,10 +119,10 @@ function Signup() {
               className="signup__input"
               required
             />
-            <p className="signup__error--message">
+            {/* <p className="signup__error--message">
               <img src={Error} alt="Error" className="signup__error--icon" />
               This field is required
-            </p>
+            </p> */}
 
             <div className="signup__section--spacer"></div>
 
@@ -137,10 +137,10 @@ function Signup() {
               <label htmlFor="termsCheckbox" className="signup__terms--label">
                 I have read and agree to the Terms and Conditions and the Privacy Policy
               </label>
-              <p className="signup__error--message">
+              {/* <p className="signup__error--message">
                 <img src={Error} alt="Error" className="signup__error--icon" />
                 This field is required
-              </p>
+              </p> */}
             </div>
           </form>
         </div>
