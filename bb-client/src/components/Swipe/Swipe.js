@@ -6,7 +6,7 @@ import "./Swipe.scss";
 // import xMark from "../../assets/Images/x_mark.png";
 // import { Link } from "react-router-dom";
 import { Button } from 'react-bootstrap'; 
-import 'react-id-swiper/lib/styles/css/swiper.css'; 
+// import 'react-id-swiper/lib/styles/css/swiper.css'; 
 import 'swiper/swiper-bundle.css'; 
 import { Swiper, SwiperSlide } from 'swiper/react'; 
 

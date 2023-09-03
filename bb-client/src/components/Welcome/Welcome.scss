@@ -31,27 +31,6 @@
     }
   }
 
-  &__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 2rem 1.5rem 2rem 1.5rem;
-
-    &--button {
-      background-color: $primary-color-1;
-      border: none;
-      border-radius: 0.75rem;
-      height: 3rem;
-      width: 23rem;
-    }
-
-    &--spacer {
-      padding-top: 2rem;
-    }
-
-    &--text {
-      color: $primary-color-3;
-      text-decoration: none;
-    }
+ 
   }
-}
+
