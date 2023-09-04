@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Welcome from "./components/Welcome/Welcome";
+import Login from "./components/Login/Login";
+import Signup from "./components/Signup/Signup";
+import Loading from './components/Loading/Loading'
+import Swipe from "./components/Swipe/Swipe";
+import Match from "./components/Match/Match";
+import Setting from "./components/Setting/Setting";
+import Home from "./pages/Home/Home";
+import Onboard from "./pages/Onboard/Onboard";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/onboarding" element={<Onboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/loading" element={<Loading />} />
+        <Route path="/swipe" element={<Swipe />} />
+        <Route path="/swipe/message" element={<Match />} />
+        <Route path="/settings" element={<Setting />} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,49 @@
+@import '../../styles/main.scss';
+
+.footer {
+  width: 23rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  position: sticky;
+//   top: -1.5rem;
+  border-top: 1px solid $supporting-color-2;
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1.75rem;
+    height: 1.75rem;
+    color: $supporting-color-1;
+    padding-top: 1rem;
+
+    // @include tablet {
+    //   font-size: 0.75rem;
+    //   line-height: 1.125rem;
+    // }
+    &--messaging{
+        padding-right: 5rem;
+        padding-left: 2.5rem;
+        width: 1.75rem;
+    height: 1.75rem;
+    }
+    &--setting{
+        padding-right: 5rem;
+        padding-left: 1rem;
+        width: 1.75rem;
+    height: 1.75rem;
+    }
+    &--user{
+        padding-right: 5rem;
+        padding-left: 1rem;
+        width: 1.75rem;
+    height: 1.75rem;
+    }
+  }
+
+//   @include desktop {
+//     top: 0;
+//     padding-bottom: 3rem;
+//   }
+}

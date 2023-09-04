@@ -1,0 +1,22 @@
+@import './_fonts.scss';
+@import './_mixins.scss';
+@import './_variables.scss';
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+.normal-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.semibold-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.extrabold-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+}

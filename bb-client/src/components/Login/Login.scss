@@ -1,0 +1,92 @@
+@import "../../styles/main.scss";
+
+.login {
+  width: 23rem;
+  &__back {
+    height: 3rem;
+    margin-right: 1.5rem;
+    width: 3rem;
+  }
+
+  &__container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  &__error {
+    &--icon {
+      height: auto;
+      padding-right: 1rem;
+      width: 3rem;
+    }
+    &--message {
+      align-items: center;
+      color: $secondary-color-2;
+      display: flex;
+    }
+  }
+
+  &__hero {
+    &--img {
+      height: 20.063rem;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+      width: 20.188rem;
+    }
+  }
+  &__input {
+    background-color: $primary-color-3;
+    border: 2px solid $supporting-color-2;
+    border-radius: 0.75rem;
+    color: $supporting-color-2;
+    height: 3rem;
+    outline: none;
+    padding-left: 1rem;
+    width: 21.5rem;
+  }
+  &__email {
+    padding-bottom: 1rem;
+  }
+  &__section {
+    margin: 2rem 1.5rem 2rem 1.5rem;
+
+    &--button {
+      background-color: $primary-color-1;
+      border: none;
+      border-radius: 0.75rem;
+      height: 3rem;
+      width: 23rem;
+
+      &-text {
+        color: $primary-color-3;
+        text-decoration: none;
+      }
+    }
+
+    &--text {
+      color: $supporting-color-2;
+      text-decoration: none;
+    }
+  }
+
+  &__spacer {
+    padding-bottom: 1rem;
+  }
+
+  &__text {
+    color: $primary-color-1;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
+    &--bold {
+      font-size: 800;
+      justify-content: start;
+    }
+  }
+}
+
+.login__input:focus {
+  border: 2px solid $primary-color-1;
+  outline: none;
+}

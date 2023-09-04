@@ -1,0 +1,36 @@
+@import '../../styles/main.scss';
+
+.welcome {
+  width: 23rem;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin: 2.5rem 1.5rem 2.5rem 1.5rem;
+    width: 23rem;
+
+    &--description-color {
+      color: $supporting-color-2;
+    }
+  }
+
+  &__hero {
+    &--img {
+      height: auto;
+      margin-top: 2.5rem;
+      width: 24rem;
+    }
+  }
+
+  &__logo {
+    &--img {
+      height: auto;
+      margin-left: 5rem;
+      margin-right: 1rem;
+      margin-top: 2.5rem;
+      max-width: 100%;
+    }
+  }
+
+ 
+  }
+
