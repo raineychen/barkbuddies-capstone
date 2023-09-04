@@ -1,6 +1,7 @@
 @import "../../styles/main.scss";
 
 .signup {
+  width: 23rem;
   &__back {
     height: 3rem;
     margin-right: 1.5rem;
@@ -58,27 +59,13 @@
   &__section {
     margin: 2rem 1.5rem 2rem 1.5rem;
 
-    &--button {
-      background-color: $primary-color-1;
-      border: none;
-      border-radius: 0.75rem;
-      height: 3rem;
-      width: 23rem;
-
-      &-text {
-        color: $primary-color-3;
-        text-decoration: none;
-      }
-    }
-
     &--text {
       color: $supporting-color-2;
       text-decoration: none;
     }
-  }
-
-  &__spacer {
-    padding-bottom: 1rem;
+    &--spacer {
+      padding-bottom: 1rem;
+    }
   }
 
   &__terms--label {
@@ -96,4 +83,14 @@
       justify-content: start;
     }
   }
+}
+.submit__button {
+  background-color: $primary-color-1;
+  border: none;
+  border-radius: 0.75rem;
+  height: 3rem;
+  width: 23rem;
+  color: $primary-color-3;
+  text-decoration: none;
+  margin-top: 1rem;
 }

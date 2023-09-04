@@ -1,10 +1,27 @@
 import "./Login.scss";
 import Hero from "../../assets/Images/login_pups.png";
 import backArrow from "../../assets/Images/back_arrow.png";
-import Error from  "../../assets/Images/error.png"
+import Error from "../../assets/Images/error.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 
 function Login() {
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [confirmPassword, setConfirmPassword] = useState(null);
+  const [error, setError] = useState(null);
+
+  const signUp = true;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (signUp && password !== confirmPassword) {
+      setError("Passwords do not match!");
+    } else {
+      console.log("Make a POST request to our database");
+    }
+  };
   return (
     <div className="login">
       <div>
@@ -21,12 +38,27 @@ function Login() {
       <div className="login__section">
         <div className="login__section--spacer">
           <form>
-              <input type="text" name="login_name" placeholder="Email Address" className={`login__input`}></input>
-                  {/* {<p className="login__error--message"><img src={Error} alt="Error" className="login__error--icon"/>This field is required</p>} */}
-            
+            <div className="login__email">
+              <input
+                type="text"
+                name="login_name"
+                placeholder="Email Address"
+                className={`login__input`}
+                required={true}
+                onChange={(e) => setEmail(e.target.value)}
+              ></input>
+              {/* {<p className="login__error--message"><img src={Error} alt="Error" className="login__error--icon"/>This field is required</p>} */}
+            </div>
             <div className="login__section--spacer"></div>
-            <input type="password" name="login_password" placeholder="Password" className={`login__input`}></input>
-                  {/* {<p className="login__error--message"><img src={Error} alt="Error" className="login__error--icon"/>This field is required</p>} */}
+            <input
+              type="password"
+              name="login_password"
+              placeholder="Password"
+              className={`login__input`}
+              required={true}
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+            {/* {<p className="login__error--message"><img src={Error} alt="Error" className="login__error--icon"/>This field is required</p>} */}
           </form>
         </div>
         <p>
@@ -41,7 +73,7 @@ function Login() {
         </button>
         <p>
           <Link to="/signup" className="login__text">
-            <p>Not a member?</p> Register Now
+            <p>Not a member? Register Now</p>
           </Link>
         </p>
       </div>

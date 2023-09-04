@@ -1,4 +1,4 @@
-@import '../../styles/main.scss';
+@import "../../styles/main.scss";
 
 .login {
   width: 23rem;
@@ -34,7 +34,6 @@
       width: 20.188rem;
     }
   }
-
   &__input {
     background-color: $primary-color-3;
     border: 2px solid $supporting-color-2;
@@ -45,7 +44,9 @@
     padding-left: 1rem;
     width: 21.5rem;
   }
-
+  &__email {
+    padding-bottom: 1rem;
+  }
   &__section {
     margin: 2rem 1.5rem 2rem 1.5rem;
 
