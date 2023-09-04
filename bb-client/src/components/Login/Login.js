@@ -37,7 +37,7 @@ function Login() {
       </div>
       <div className="login__section">
         <div className="login__section--spacer">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="login__email">
               <input
                 type="text"

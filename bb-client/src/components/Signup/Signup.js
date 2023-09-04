@@ -3,8 +3,22 @@ import backArrow from "../../assets/Images/back_arrow.png";
 import Error from "../../assets/Images/error.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from 'axios';
+
 
 function Signup() {
+  const [SignUp, setSignUp] = useState({
+    // user_id:cookies.UserId,
+    name:"",
+    age:"",
+    pet_name:"",
+    pet_gender:"",
+    url:"",
+    email:"",
+    vaccination:"",
+    matches:[]
+})
+
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState(null);
@@ -21,6 +35,16 @@ function Signup() {
       console.log("Make a POST request to our database");
     }
   };
+  const handleChange = (e) => {
+    console.log('e', e)
+    const value = e.target.type === "checkbox" ? e.target.checked : e.target.value
+    const name = e.target.name
+
+    setSignUp((prevState) => ({
+        ...prevState,
+        [name]: value
+    }))
+}
 
   return (
     <div className="signup">
@@ -42,6 +66,8 @@ function Signup() {
               placeholder="Name"
               className="signup__input"
               required={true}
+              value={""}
+              onChange={handleChange}
             />
             {/* <p className="signup__error--message">
               <img src={Error} alt="Error" className="signup__error--icon" />
@@ -103,6 +129,26 @@ function Signup() {
               <img src={Error} alt="Error" className="signup__error--icon" />
               This field is required
             </p> */}
+            <section>
+              <div className="signup__section--spacer"></div>
+
+              <label htmlFor="url"></label>
+              <input
+                type="url"
+                name="url"
+                id="url"
+                placeholder="Profile Photo"
+                className="signup__input"
+                onChange={handleChange}
+                required={true}
+              />
+              <div className="photo-container">
+                {SignUp.url && (
+                  <img src={SignUp.url} alt="profile pic preview" />
+                )}
+              </div>
+            </section>
+
             <div className="signup__section--spacer"></div>
 
             <div className="signup__section--spacer"></div>
