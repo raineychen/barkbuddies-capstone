@@ -1,6 +1,6 @@
 import "./Signup.scss";
 import backArrow from "../../assets/Images/back_arrow.png";
-import Error from "../../assets/Images/error.png";
+import Loading from "../Loading/Loading";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from 'axios';
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 
 function Signup() {
+ 
   const [SignUp, setSignUp] = useState({
     name:"",
     age:"",
@@ -18,6 +19,8 @@ function Signup() {
     vaccination:"",
     matches:[]
 })
+const [loading, setLoading] = useState(true);
+const [submitted, setSubmitted] = useState(false);
 
 const [email, setEmail] = useState(null);
 const [password, setPassword] = useState(null);
@@ -32,9 +35,18 @@ let navigate = useNavigate()
     if (signUp && password !== confirmPassword) {
       setError("Passwords do not match!");
     } else {
-      console.log("Make a POST request to our database");
+      console.log("sending information to database");
     }
+
+    setLoading(true);
+    setSubmitted(true);
+
+    setTimeout(() => {
+
+      setLoading(false);
+    }, 3000);
   };
+
   const handleChange = (e) => {
     console.log('e', e)
     const value = e.target.type === "checkbox" ? e.target.checked : e.target.value
@@ -58,6 +70,7 @@ let navigate = useNavigate()
       })
 };
 
+
 return (
   <div className="signup">
     <div>
@@ -71,6 +84,7 @@ return (
     </div>
     <div className="signup__section">
       <div className="signup__section--spacer">
+      
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -171,9 +185,10 @@ return (
               This field is required
             </p> */}
           </div>
-          <input className="submit__button" type="submit" />
+          <input className="submit__button" type="submit" to={'/dashboard'}/>
           <p>{error}</p>
         </form>
+        {submitted && loading ? <Loading /> : null}
       </div>
 
       {/* <button className="signup__section--button">
