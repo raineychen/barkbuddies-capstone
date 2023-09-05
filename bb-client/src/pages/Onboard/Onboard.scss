@@ -1,0 +1,96 @@
+@import "../../styles/main.scss";
+
+.register {
+  width: 23rem;
+  &__back {
+    height: 3rem;
+    margin-right: 1.5rem;
+    width: 3rem;
+  }
+
+  &__checkbox {
+    margin-right: 0.5rem;
+  }
+
+  &__error {
+    &--icon {
+      height: auto;
+      padding-right: 1rem;
+      width: 3rem;
+    }
+
+    &--message {
+      align-items: center;
+      color: $secondary-color-2;
+      display: flex;
+    }
+  }
+
+  &__header {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  &__hero {
+    &--img {
+      height: 20.063rem;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+      width: 20.188rem;
+    }
+  }
+
+  &__input {
+    background-color: $primary-color-3;
+    border: 2px solid $supporting-color-2;
+    border-radius: 0.75rem;
+    color: $supporting-color-2;
+    height: 3rem;
+    outline: none;
+    padding-left: 1rem;
+    width: 21.5rem;
+
+    &:focus {
+      border: 2px solid $primary-color-1;
+      outline: none;
+    }
+  }
+
+  &__section {
+    margin: 2rem 1.5rem 2rem 1.5rem;
+
+    &--text {
+      color: $supporting-color-2;
+      text-decoration: none;
+    }
+    &--spacer {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__terms--label {
+    color: $supporting-color-2;
+  }
+
+  &__text {
+    color: $primary-color-1;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
+    &--bold {
+      font-size: 800;
+      justify-content: start;
+    }
+  }
+}
+.register__button {
+  background-color: $primary-color-1;
+  border: none;
+  border-radius: 0.75rem;
+  height: 3rem;
+  width: 23rem;
+  color: $primary-color-3;
+  text-decoration: none;
+  margin-top: 1rem;
+}
