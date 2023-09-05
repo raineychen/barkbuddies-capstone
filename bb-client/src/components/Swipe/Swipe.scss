@@ -1,7 +1,7 @@
 @import "../../styles/main.scss";
 
 .swipe {
-  // width: 23rem;
+  width: 23rem;
   &__hero {
     background-image: url(../../assets/Images/default.jpeg);
     width: 100%;
@@ -9,7 +9,8 @@
     background-position: center;
     background-size: cover;
     display: flex;
-    // margin-top: 3rem;
+    margin-top: 3rem;
+    display: flex;
     flex-direction: column;
   }
   &__info {
@@ -29,11 +30,11 @@
     }
     &--breed{
         padding-left: 1rem;
-        
+
     }
     &--distance{
         padding-left: 1rem;
-        
+
     }
   }
   &__detail {
@@ -52,8 +53,8 @@
       padding-top: 1rem;
     }
     &--interation {
-      padding-top: 2rem;
-      padding-bottom: 4rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
       display: flex;
       justify-content: space-around;
       flex-direction: row;

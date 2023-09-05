@@ -1,32 +1,47 @@
 import "./Match.scss";
-import { Link } from "react-router-dom";
-import profile from "../../assets/Images/profile_user.png";
-import edit from "../../assets/Images/edit.png";
-import Footer from "../Footer/Footer";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
 
+function Match({ matches, setClickedUser }) {
+  const [matchedProfiles, setMatchedProfiles] = useState(null);
+  const [cookies, setCookie, removeCookie] = useCookies(null);
 
-function Match() {
-  return (
-    <div className="comments">
-      <div className="comments__header">
-        <h2>Messages</h2>
-        <img src={edit} alt='edit icon' className="comments__header--icons"/>
-      </div>
-      <div className="comments__border">
-        <div className="comments__image">
-          <img className="comments__icons" src={profile} alt="user icon" />
-        </div>
-        <div className="comments__box">
-          <h2 className="comments__user--name">User's Name</h2>
-          <p className="comments__user--comment">User's Comment</p>
-        </div>
-      </div>  
-      <div className="comments__footer">
-      <Footer />
-      </div>
-    </div>
+  const matchedUserIds = matches.map(({ user_id }) => user_id);
+  const userId = cookies.UserId;
+
+  const getMatches = () => {
+    axios
+      .get("http://localhost:8080/users", {
+        params: { userIds: JSON.stringify(matchedUserIds) },
+      })
+      .then((response) => {
+        setMatchedProfiles(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   
-   
+  useEffect(() => {
+    getMatches();
+  }, [matches]);
+  
+  return (
+    <div className="matches__display">
+    {filteredMatchedProfiles?.map((match, _index) => (
+      <div
+        key={_index}
+        className="match__card"
+        onClick={() => setClickedUser(match)}
+      >
+        <div className="image__container">
+          <img src={match?.url} alt={match?.pet_name + " profile"} />
+        </div>
+        <h3>{match?.pet_name}</h3>
+      </div>
+    ))}
+  </div>
   );
 }
 

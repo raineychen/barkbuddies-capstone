@@ -1,64 +1,120 @@
-import LogoutModal from "../../components/LogoutModal/LogoutModal";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import profile from "../../assets/Images/profile_user.png";
-import edit from "../../assets/Images/edit.png";
-import Footer from "../../components/Footer/Footer";
-import backArrow from "../../assets/Images/back_arrow.png";
-import forward from "../../assets/Images/forward_arrow.png";
 import "./Dashboard.scss";
+import { useEffect, useState } from "react";
+import Message from '../../components/Message/Message'
+import { useCookies } from "react-cookie";
+import axios from "axios";
+// import TinderCard from "react-tinder-card";
 
 function Dashboard() {
-  const authToken = true;
-  const [showModal, setShowModal] = useState(false);
+  const [user, setUser] = useState(null);
+  const [ageMatchedUsers, setAgeMatchedUsers] = useState(null); 
+  const [lastDirection, setLastDirection] = useState();
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
 
-  const handleClick = () => {
-    console.log("clicked");
-    setShowModal(true);
+  const userId = cookies.UserId;
+
+  const getUser = () => {
+    axios
+      .get("http://localhost:8080/users", {
+        params: { userId },
+      })
+      .then((response) => {
+        setUser(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
+
+  const getAgeMatchedUsers = () => {
+    axios
+      .get("http://localhost:8080/age-matched-users", {
+        params: { age: user?.puppy_age_interest }, // Change to puppy_age_interest
+      })
+      .then((response) => {
+        setAgeMatchedUsers(response.data); // Updated state variable name
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      getAgeMatchedUsers();
+    }
+  }, [user]);
+
+  const updateMatches = (matchedUserId) => {
+    axios
+      .put("http://localhost:8080/addmatch", {
+        userId,
+        matchedUserId,
+      })
+      .then(() => {
+        getUser();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const swiped = (direction, swipedUserId) => {
+    if (direction === "right") {
+      updateMatches(swipedUserId);
+    }
+    setLastDirection(direction);
+  };
+
+  const outOfFrame = (name) => {
+    console.log(name + " left the screen!");
+  };
+
+  const matchedUserIds = user?.matches
+    .map(({ user_id }) => user_id)
+    .concat(userId);
+
+  const filteredAgeMatchedUsers = ageMatchedUsers?.filter(
+    (ageMatchedUser) => !matchedUserIds.includes(ageMatchedUser.user_id)
+  );
+
+  console.log("filteredAgeMatchedUsers ", filteredAgeMatchedUsers);
 
   return (
     <>
-      <div className="settings"> 
-      <div className="settings__header">
-        <div>
-          <Link to={"/swipe"}>
-            <img alt="back arrow" src={backArrow} className="settings__back" />
-          </Link>
-        </div>
-       
-          <h2 className="settings__header--text">Settings</h2>
-          {/* <img src={edit} alt="edit icon" className="settings__header--icons" /> */}
-        </div>
-        <div className="settings__border">
-          <div className="settings__image">
-            <img className="settings__icons" src={profile} alt="user icon" />
-            <img src={edit} alt="edit icon" className="settings__image--icons" />
-            <div className="settings__user">
-                <h2 className="settings__user--name">Pet's Name</h2>
-                <p className="settings__user--name">User's Name</p>
+      {/* {user && (
+        <div className="dashboard">
+          <Message user={user} />
+          <div className="swipe-container">
+            <div className="card-container">
+              {filteredAgeMatchedUsers?.map((ageMatchedUser) => (
+                // <TinderCard
+                //   className="swipe"
+                //   key={ageMatchedUser.user_id}
+                //   onSwipe={(dir) => swiped(dir, ageMatchedUser.user_id)}
+                //   onCardLeftScreen={() => outOfFrame(ageMatchedUser.first_name)}
+                // >
+                //   <div
+                //     style={{
+                //       backgroundImage: "url(" + ageMatchedUser.url + ")",
+                //     }}
+                //     className="card"
+                //   >
+                //     <h3>{ageMatchedUser.first_name}</h3>
+                //   </div>
+                // </TinderCard>
+              // ))}
+              <div className="swipe-info">
+                {lastDirection ? <p>You swiped {lastDirection}</p> : <p />}
+              </div>
             </div>
           </div>
-          <div className="settings__box">
-          
-            <Link className="settings__box--text">Account<img src={forward} alt="forward icon" className="settings__box--icons" /></Link>
-            <Link className="settings__box--text">Contact Us<img src={forward} alt="forward icon" className="settings__box--icons" /></Link>
-            <Link className="settings__box--text">Privacy & Security<img src={forward} alt="forward icon" className="settings__box--icons" /></Link>
-           
-          </div>
         </div>
-
-        <div>
-          <button className="settings__logout" onClick={handleClick}>
-            {authToken ? "Signout" : "Delete Account"}
-            {/* {authToken ? "Signout" : "Delete Account"} */}
-          </button>
-          {showModal && <LogoutModal setShowModal={setShowModal} />}
-        </div>
-        <div className="settings__footer">
-          <Footer />
-        </div>
-      </div>
+      )} */}
     </>
   );
 }

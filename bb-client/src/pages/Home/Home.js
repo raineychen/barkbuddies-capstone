@@ -17,12 +17,6 @@ function Home() {
         <button className="home__section--button"><Link to={'/signup'} className="home__section--text">Signup</Link></button>
         </div> 
      </div>
-        <div className="home">
-            <h1>Swipe Right®</h1>
-            <button className="home__primary-button" onClick={handleClick}>
-                {authToken ? 'Signout': "Create Account"}
-            </button>
-        </div>
         </>
     )
 }
