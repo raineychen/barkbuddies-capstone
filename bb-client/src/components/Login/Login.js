@@ -67,7 +67,7 @@ function Login() {
           </Link>
         </p>
         <button className="login__section--button">
-          <Link to="/swipe" className="login__section--button-text">
+          <Link to="/dashboard" className="login__section--button-text">
             Login
           </Link>
         </button>

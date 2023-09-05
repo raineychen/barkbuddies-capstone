@@ -1,51 +1,43 @@
 import "./Swipe.scss";
-import $ from "jquery";
+import Footer from "../Footer/Footer";
+import userProfile from "../../assets/Images/profile_user.png";
+import heart from "../../assets/Images/heart.png";
+import info from "../../assets/Images/info.png";
+import xMark from "../../assets/Images/x_mark.png";
+import { Link } from "react-router-dom";
 
 function Swipe() {
-  $(document).ready(function () {
-    $(".buddy").on("swiperight", function () {
-      $(this).addClass('rotate-left').delay(700).fadeOut(1);
-      $('.buddy').find('.status').remove();
-
-      $(this).append('<div className="status like">Like!</div>');
-      if ($(this).is(':last-child')) {
-        $('.buddy:nth-child(1)').removeClass('rotate-left rotate-right').fadeIn(300);
-      } else {
-        $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
-      }
-    });
-
-    $(".buddy").on("swipeleft", function () {
-      $(this).addClass('rotate-right').delay(700).fadeOut(1);
-      $('.buddy').find('.status').remove();
-      $(this).append('<div className="status dislike">Dislike!</div>');
-
-      if ($(this).is(':last-child')) {
-        $('.buddy:nth-child(1)').removeClass('rotate-left rotate-right').fadeIn(300);
-        alert('OUPS');
-      } else {
-        $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
-      }
-    });
-  });
-
   return (
-    <div id="container">
-      <div className="buddy" style={{ display: "block" }}>
-        <div className="avatar" style={{ display: "block", backgroundImage: 'url())' }}></div>
+    <div className="swipe">
+      <div className="swipe__hero">
+        <div className="swipe__info">
+          <h3 className="swipe__info--name">Atticus</h3>{" "}
+          <p className="swipe__info--age">1 year</p>
+        </div>
+        <div className="swipe__detail">
+          <p className="swipe__info--gender">Male</p>{" "}
+          <p className="swipe__info--breed">Pomerian</p>{" "}
+          <p className="swipe__info--distance">0.5km away</p>
+        </div>
       </div>
-      <div className="buddy">
-        <div className="avatar" style={{ display: "block", backgroundImage: 'url()' }}></div>
+      <div className="swipe__buttons">
+        <div className="swipe__buttons--user">
+          <img src={userProfile} alt="user profile" className="swipe__icon" />
+          <p className="swipe__owner"> Tina</p>
+        </div>
+        <div className="swipe__buttons--interation">
+          <Link to={'/swipe/reject'}>
+          <img className="swipe__icons" src={xMark} alt="x-mark" />
+          </Link>
+          <Link to={'/swipe/info'}>
+          <img className="swipe__icon" src={info} alt="info" />
+          </Link>
+          <Link to={'/swipe/message'}>
+          <img className="swipe__icons" src={heart} alt="heart icon" />
+          </Link>
+        </div>
       </div>
-      <div className="buddy">
-        <div className="avatar" style={{ display: "block", backgroundImage: 'url()' }}></div>
-      </div>
-      <div className="buddy">
-        <div className="avatar" style={{ display: "block", backgroundImage: 'url()' }}></div>
-      </div>
-      <div className="buddy">
-        <div className="avatar" style={{ display: "block", backgroundImage: 'url()' }}></div>
-      </div>
+      <Footer />
     </div>
   );
 }

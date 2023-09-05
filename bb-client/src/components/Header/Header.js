@@ -1,12 +1,11 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
-import profile from "../../assets/Images/profile_user.png";
 import edit from "../../assets/Images/edit.png";
 import Footer from "../Footer/Footer";
 import backArrow from '../../assets/Images/back_arrow.png'
-import { useNavigate } from "react-router-dom";
 
-function Header() {
+
+function Header({user}) {
   return (
     <div className="header">
       <div>
@@ -18,15 +17,14 @@ function Header() {
         <h2 className="header__header--text">Messages</h2>
         <img src={edit} alt="edit icon" className="header__header--icons" />
       </div>
-      <div className="header__border">
-        <div className="header__image">
-          <img className="header__icons" src={profile} alt="user icon" />
+      <div className="chat-container-header">
+            <div className="profile">
+                <div className="img-container">
+                    <img src={user.url} alt={"photo of " + user.name}/>
+                </div>
+                <h3>{user.name}</h3>
+            </div>
         </div>
-        <div className="header__box">
-          <h2 className="header__user--name">User's Name</h2>
-          <p className="header__user--comment">User's Comment</p>
-        </div>
-      </div>
       <div className="header__footer">
         <Footer />
       </div>
