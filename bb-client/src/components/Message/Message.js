@@ -1,6 +1,6 @@
 import Header from "../Header/Header";
 import Connections from "../Connections/Connections";
-import MessageDisplay from "../MessageDisplay/MessageDisplay";
+// import MessageDisplay from "../MessageDisplay/MessageDisplay";
 import './Message.scss';
 
 function Message() {
@@ -13,7 +13,7 @@ function Message() {
             </div>
 
             <Connections />
-            <MessageDisplay/>
+            {/* <MessageDisplay/> */}
         </div>
     )
 }
