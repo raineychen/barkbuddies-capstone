@@ -1,0 +1,27 @@
+@import "../../styles/main.scss";
+
+
+.message {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+    width: 23rem;
+    &__container{
+    display: flex;
+    align-items: center;
+    justify-self: space-between;
+    }
+   &__button{
+    border: none;
+    background-color: $primary-color-3;
+    border-bottom: solid 4px $primary-color-1;
+    font-size: 1.25rem;
+    margin: 0.125rem;
+    padding: 0.625rem;
+}
+&__button:hover{
+    color: $primary-color-1;
+    background-color: $primary-color-3;
+}
+
+  }
+  

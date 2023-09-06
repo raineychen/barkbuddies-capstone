@@ -1,8 +1,8 @@
-import "./Setting.scss";
+import "./Header.scss";
 import { Link } from "react-router-dom";
-// import profile from "../../assets/Images/profile_user.png";
-// import edit from "../../assets/Images/edit.png";
-// import Footer from "../Footer/Footer";
+import profile from "../../assets/Images/profile_user.png";
+import edit from "../../assets/Images/edit.png";
+import Footer from "../Footer/Footer";
 import backArrow from '../../assets/Images/back_arrow.png'
 import { useNavigate } from "react-router-dom";
 

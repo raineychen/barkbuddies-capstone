@@ -9,6 +9,7 @@ import Setting from "./components/Setting/Setting";
 import Home from "./pages/Home/Home";
 import Onboard from "./pages/Onboard/Onboard";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Message from "./components/Message/Message";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/swipe" element={<Swipe />} />
-        <Route path="/swipe/message" element={<Match />} />
+        <Route path="/swipe/message" element={<Message />} />
         <Route path="/settings" element={<Setting />} />
 
       </Routes>
