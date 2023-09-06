@@ -1,7 +1,7 @@
 @import "../../styles/main.scss";
 
 .settings {
-    width: 23rem;
+    width: 27rem;
     // :disabled{
     //   color: $supporting-color-2;
     //   opacity: 25%;
@@ -36,7 +36,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 23rem;
+    width: 30rem;
+    padding-left: 2rem;
+    padding-right: 3rem;
+
     &--icons { 
       margin-top: 1rem;
       height: 1.5rem;
@@ -44,6 +47,9 @@
       position: absolute;
       padding-left: 3rem;
     }
+  }
+  &__button{
+   padding-left: 2rem;
   }
   &__user {
     display: flex;
@@ -55,7 +61,7 @@
     border: none;
     border-radius: 0.75rem;
     height: 3rem;
-    width: 23rem;
+    width: 27rem;
     color: $primary-color-3;
     text-decoration: none;
     margin-top: 1rem;

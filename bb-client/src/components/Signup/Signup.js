@@ -72,6 +72,7 @@ let navigate = useNavigate()
 
 
 return (
+  <>
   <div className="signup">
     <div>
       <Link to="/login">
@@ -198,7 +199,8 @@ return (
       </button> */}
     </div>
   </div>
-);
-}
+  </>
+)
+};
 
 export default Signup;

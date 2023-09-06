@@ -49,10 +49,12 @@ function Setting() {
         </div>
 
         <div>
+          <div className="settings__button">
           <button className="settings__logout" onClick={handleClick}>
             {authToken ? "Signout" : "Delete Account"}
             {/* {authToken ? "Signout" : "Delete Account"} */}
           </button>
+          </div>
           {showModal && <LogoutModal setShowModal={setShowModal} />}
         </div>
         <div className="settings__footer">
